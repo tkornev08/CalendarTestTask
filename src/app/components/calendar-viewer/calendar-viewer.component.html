@@ -11,9 +11,16 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-week>
-    <tr >
-      <td *ngFor="let day of week.days">
-        {{ day.value | moment:'ddd DD' }}
+    <tr>
+      <td *ngFor="let day of week.days"
+          [class.disabled]="day.disabled"
+      >
+        <span
+          [class.selected]="day.selected"
+          [class.active]="day.active"
+        >
+          {{ day.value | moment:'ddd DD' }}
+        </span>
       </td>
     </tr>
   </ng-template>

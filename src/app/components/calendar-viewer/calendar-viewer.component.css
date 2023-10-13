@@ -1,0 +1,10 @@
+.active {
+  color: #c2c2c2;
+  font-weight: bold;
+}
+.disabled {
+  opacity: .5;
+}
+.selected {
+  color: blue;
+}

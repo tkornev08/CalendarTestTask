@@ -1,1 +1,8 @@
-<p>month-selector works!</p>
+<p>
+
+  <i (click)="changeMonthWithStep(-1)" class="pi pi-caret-left" style="color: slateblue; cursor: pointer"></i>
+  <span *ngIf="dateService.date">
+    {{ dateService.date | async | moment }}
+  </span>
+  <i (click)="changeMonthWithStep(1)" class="pi pi-caret-right" style="color: slateblue; cursor: pointer"></i>
+</p>

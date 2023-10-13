@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {DateService} from "../../services/date.service";
 
 @Component({
   selector: 'app-month-selector',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./month-selector.component.css']
 })
 export class MonthSelectorComponent {
+
+  constructor(
+    public dateService: DateService
+  ) {
+  }
+
+  changeMonthWithStep(dir: number) {
+    this.dateService.changeMonth(dir)
+  }
 
 }
