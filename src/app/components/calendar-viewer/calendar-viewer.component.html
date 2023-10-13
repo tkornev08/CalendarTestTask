@@ -14,6 +14,7 @@
     <tr>
       <td *ngFor="let day of week.days"
           [class.disabled]="day.disabled"
+          (click)="op.toggle($event)"
       >
         <span
           [class.selected]="day.selected"
@@ -23,6 +24,11 @@
         </span>
       </td>
     </tr>
+
   </ng-template>
 </p-table>
-
+<p-overlayPanel #op [style]="{'width': '450px'}" [showCloseIcon]="true">
+  <ng-template pTemplate="content">
+    <app-event-editor></app-event-editor>
+  </ng-template>
+</p-overlayPanel>

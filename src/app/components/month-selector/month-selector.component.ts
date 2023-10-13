@@ -7,6 +7,7 @@ import {DateService} from "../../services/date.service";
   styleUrls: ['./month-selector.component.css']
 })
 export class MonthSelectorComponent {
+  calendarEventValue: any;
 
   constructor(
     public dateService: DateService

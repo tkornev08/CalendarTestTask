@@ -1,8 +1,17 @@
-<p>
-
-  <i (click)="changeMonthWithStep(-1)" class="pi pi-caret-left" style="color: slateblue; cursor: pointer"></i>
-  <span *ngIf="dateService.date">
-    {{ dateService.date | async | moment }}
-  </span>
-  <i (click)="changeMonthWithStep(1)" class="pi pi-caret-right" style="color: slateblue; cursor: pointer"></i>
-</p>
+<div class="card flex justify-content-center">
+  <p>
+    <i (click)="changeMonthWithStep(-1)" class="pi pi-caret-left" style="color: slateblue; cursor: pointer"></i>
+    <span *ngIf="dateService.date">
+      {{ dateService.date | async | moment }}
+    </span>
+    <i (click)="changeMonthWithStep(1)" class="pi pi-caret-right" style="color: slateblue; cursor: pointer"></i>
+  </p>
+  <p-overlayPanel #op>
+    <div class="p-inputgroup">
+      <input type="text" pInputText [(ngModel)]="calendarEventValue" />
+      <button type="button" pButton icon="pi pi-check" pStyleClass="p-button-warn" [(ngModel)]="calendarEventValue"></button>
+    </div>
+  </p-overlayPanel>
+  <p-button label="Добавить" size="small" (click)="op.toggle($event)"></p-button>
+  <p-button label="Обновить" size="small"></p-button>
+</div>
