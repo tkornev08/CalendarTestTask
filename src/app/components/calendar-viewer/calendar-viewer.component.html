@@ -1,0 +1,21 @@
+<p-table [value]="calendar" [tableStyle]="{ 'min-width': '50rem' }" styleClass="p-datatable-gridlines">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Пн.</th>
+      <th>Вт.</th>
+      <th>Ср.</th>
+      <th>Чт.</th>
+      <th>Пт.</th>
+      <th>Сб.</th>
+      <th>Вск.</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-week>
+    <tr >
+      <td *ngFor="let day of week.days">
+        {{ day.value | moment:'ddd DD' }}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
