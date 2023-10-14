@@ -8,10 +8,9 @@
   </p>
   <p-overlayPanel #op>
     <div class="p-inputgroup">
-      <input type="text" pInputText [(ngModel)]="calendarEventValue" />
-      <button type="button" pButton icon="pi pi-check" pStyleClass="p-button-warn" [(ngModel)]="calendarEventValue"></button>
+      <input type="text" pInputText [(ngModel)]="eventString" />
+      <button type="button" pButton icon="pi pi-check" pStyleClass="p-button-warn" (click)="createEvent()"></button>
     </div>
   </p-overlayPanel>
   <p-button label="Добавить" size="small" (click)="op.toggle($event)"></p-button>
-  <p-button label="Обновить" size="small"></p-button>
 </div>

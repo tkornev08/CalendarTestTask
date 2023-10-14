@@ -12,6 +12,7 @@ export class EventService {
   overlayPanel: OverlayPanel | undefined
 
   eventForm: FormGroup = new FormGroup({
+    id: new FormControl(null),
     title: new FormControl(''),
     description: new FormControl(''),
     participants: new FormControl(''),

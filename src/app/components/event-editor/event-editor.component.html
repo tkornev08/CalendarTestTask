@@ -5,5 +5,5 @@
   <textarea rows="5" cols="30" pInputTextarea formControlName="description"></textarea>
 
   <p-button label="Сохранить" size="small" severity="success" (onClick)="submitForm($event)"></p-button>
-  <p-button label="Удалить" size="small" severity="danger"></p-button>
+  <p-button label="Удалить" size="small" severity="danger" (onClick)="remove($event)"></p-button>
 </form>

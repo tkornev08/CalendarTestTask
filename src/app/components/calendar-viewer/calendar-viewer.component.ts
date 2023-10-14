@@ -78,6 +78,7 @@ export class CalendarViewerComponent implements OnInit {
     console.log('openOverlayPanelWithData', day.value.toDate())
     if (day.event) {
       this.eventService.eventForm.patchValue({
+        id: day.event.id,
         title: day.event.title,
         date: day.value.toDate(),
         description: day.event.description,
@@ -85,6 +86,11 @@ export class CalendarViewerComponent implements OnInit {
       })
     } else {
       this.eventService.eventForm.patchValue({
+        id: null,
+        title: '',
+        date: day.value.toDate(),
+        description: '',
+        participants: ''
       })
     }
     this.overlayPanel!.toggle(event); // Откройте p-overlayPanel
