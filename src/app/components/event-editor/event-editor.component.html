@@ -1,7 +1,9 @@
-<input type="text" pInputText placeholder="Событие"/>
-<p-calendar ></p-calendar>
-<input type="text" pInputText placeholder="Участники"/>
-<textarea rows="5" cols="30" pInputTextarea></textarea>
+<form [formGroup]="eventService.eventForm">
+  <input type="text" pInputText placeholder="Событие" formControlName="title"/>
+  <p-calendar formControlName="date"></p-calendar>
+  <input type="text" pInputText placeholder="Участники" formControlName="participants"/>
+  <textarea rows="5" cols="30" pInputTextarea formControlName="description"></textarea>
 
-<p-button label="Сохранить" size="small" severity="success"></p-button>
-<p-button label="Удалить" size="small" severity="danger"></p-button>
+  <p-button label="Сохранить" size="small" severity="success" (onClick)="submitForm($event)"></p-button>
+  <p-button label="Удалить" size="small" severity="danger"></p-button>
+</form>

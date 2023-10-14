@@ -6,5 +6,5 @@ export interface Day {
   active?: boolean
   disabled?: boolean
   selected?: boolean
-  events?: CalendarEvent[]
+  event?: CalendarEvent
 }

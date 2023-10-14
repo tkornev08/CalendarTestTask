@@ -13,11 +13,12 @@ import { CalendarViewerComponent } from './components/calendar-viewer/calendar-v
 import { MomentPipe } from './pipes/moment.pipe';
 import {OverlayPanelModule} from "primeng/overlaypanel";
 import {InputMaskModule} from "primeng/inputmask";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ChipsModule} from "primeng/chips";
 import {StyleClassModule} from "primeng/styleclass";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {CalendarModule} from "primeng/calendar";
+import { EventCardComponent } from './components/event-card/event-card.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {CalendarModule} from "primeng/calendar";
     EventEditorComponent,
     ShortEventCreatorComponent,
     CalendarViewerComponent,
-    MomentPipe
+    MomentPipe,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import {CalendarModule} from "primeng/calendar";
     ChipsModule,
     StyleClassModule,
     InputTextareaModule,
-    CalendarModule
+    CalendarModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

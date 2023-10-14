@@ -14,21 +14,22 @@
     <tr>
       <td *ngFor="let day of week.days"
           [class.disabled]="day.disabled"
-          (click)="op.toggle($event)"
+          (click)="openOverlayPanelWithData(day, $event)"
       >
         <span
           [class.selected]="day.selected"
           [class.active]="day.active"
         >
-          {{ day.value | moment:'ddd DD' }}
+          {{ day.value | moment:'DD' }}
         </span>
+        <app-event-card [calendarEvent]="day.event"></app-event-card>
       </td>
     </tr>
 
   </ng-template>
 </p-table>
-<p-overlayPanel #op [style]="{'width': '450px'}" [showCloseIcon]="true">
-  <ng-template pTemplate="content">
-    <app-event-editor></app-event-editor>
+<p-overlayPanel #overlayPanel [style]="{'width': '450px'}" [showCloseIcon]="true" (onHide)="eventService.eventForm.reset()">
+  <ng-template pTemplate="content" let-data="day">
+    <app-event-editor [overlayPanel]="overlayPanel"></app-event-editor>
   </ng-template>
 </p-overlayPanel>
